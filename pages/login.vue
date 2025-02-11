@@ -1,29 +1,41 @@
 <script setup lang="ts">
-// const supabase = useSupabaseClient()
-// const email = ref('')
-//
-// const signInWithOtp = async () => {
-//   const { error } = await supabase.auth.signInWithOtp({
-//     email: email.value,
-//     options: {
-//       emailRedirectTo: 'http://localhost:3000/confirm',
-//     }
-//   })
-//   if (error) console.log(error)
-// }
 
 </script>
 <template>
-  <Auth/>
-
-<!--  <div>-->
-<!--    <input-->
-<!--        v-model="email"-->
-<!--        type="email"-->
-<!--    />-->
-<!--    <button @click="signInWithOtp">-->
-<!--      Sign In with E-Mail-->
-<!--    </button>-->
-
-<!--  </div>-->
+  <div class="holy-grail">
+    <div class="main">
+      <Auth/>
+    </div>
+    <footer class="footer">
+      Vacation Planner - by <a href="https://emanum.dev">Emanum</a> - <a
+        href="https://github.com/Emanum/vacationPlanner">GitHub</a>
+    </footer>
+  </div>
 </template>
+
+<style scoped>
+.holy-grail {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header, .footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+}
+
+.footer a {
+  margin-left: 0.5rem; /* Adjust the margin as needed */
+  margin-right: 0.5rem; /* Adjust the margin as needed */
+
+}
+
+</style>

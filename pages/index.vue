@@ -17,7 +17,7 @@
         <component :is="currentTab"></component>
       </section>
     </div>
-    <footer class="footer">Subabase demo - by <a href="https://emanum.dev">Emanum</a></footer>
+    <footer class="footer">Vacation Planner - by <a href="https://emanum.dev">Emanum</a> - <a href="https://github.com/Emanum/vacationPlanner">GitHub</a></footer>
   </div>
 </template>
 
@@ -97,5 +97,11 @@ async function signOut() {
   padding: 1rem;
   background: #3d3d3d;
   color: white;
+}
+
+.footer a {
+  margin-left: 0.5rem; /* Adjust the margin as needed */
+  margin-right: 0.5rem; /* Adjust the margin as needed */
+
 }
 </style>
