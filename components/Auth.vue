@@ -16,10 +16,63 @@ const handleLogin = async () => {
     loading.value = false
   }
 }
+
+const signInWithOtp = async () => {
+  try{
+    loading.value = true
+    const { error } = await supabase.auth.signInWithOtp({
+      email: email.value,
+      options: {
+        emailRedirectTo: window.location.origin + '/confirm',
+      }
+    })
+    if (error) console.log(error)
+  }catch(error){
+    alert(error.error_description || error.message)
+  }finally{
+    loading.value = false
+  }
+}
+
+
+async function signInWithAzure() {
+  try {
+    loading.value = true
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'azure',
+      options: {
+        scopes: 'email',
+        redirectTo: window.location.origin + '/confirm',
+      },
+    })
+  }catch (error) {
+    alert(error.error_description || error.message)
+  }finally {
+    loading.value = false
+  }
+
+}
+
+async function signInWithGithub() {
+  try {
+    loading.value = true
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+      options: {
+        redirectTo: window.location.origin + '/confirm',
+      },
+    })
+  }catch (error) {
+    alert(error.error_description || error.message)
+  }finally {
+    loading.value = false
+  }
+}
+
 </script>
 
 <template>
-  <form class="row flex-center flex" @submit.prevent="handleLogin">
+  <form class="row flex-center flex" @submit.prevent="signInWithOtp">
     <div class="col-6 form-widget">
       <h1 class="header">Supabase + Nuxt 3</h1>
       <p class="description">Sign in via magic link with your email below</p>
@@ -34,6 +87,11 @@ const handleLogin = async () => {
             :disabled="loading"
         />
       </div>
+      <div>
+        <button class="button block" @click="signInWithAzure" :disabled="loading">Sign in with Azure</button>
+        <button class="button block" @click="signInWithGithub" :disabled="loading">Sign in with Github</button>
+      </div>
+
     </div>
   </form>
 </template>
