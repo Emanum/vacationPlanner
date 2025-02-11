@@ -1,12 +1,11 @@
-<!-- pages/index.vue -->
+!-- pages/Account.vue -->
 <template>
   <BaseLayout>
-    <div>
-      <h1>Welcome to Vacation Planner</h1>
-    </div>
+    <Calendar />
   </BaseLayout>
 </template>
 
 <script setup>
 import BaseLayout from '@/components/BaseLayout.vue';
+import Calendar from '@/components/Calendar.vue';
 </script>
