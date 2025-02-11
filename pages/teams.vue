@@ -1,10 +1,10 @@
 <template>
   <BaseLayout>
-    <Account />
+    <Teams />
   </BaseLayout>
 </template>
 
 <script setup>
 import BaseLayout from '@/components/BaseLayout.vue';
-import Account from '@/components/Account.vue';
+import Teams from '@/components/Teams.vue';
 </script>

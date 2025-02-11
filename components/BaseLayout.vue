@@ -14,6 +14,12 @@
             <router-link to="/account">Account</router-link>
           </li>
           <li>
+            <router-link to="/teams">Teams</router-link>
+          </li>
+          <li>
+            <router-link to="/vacations">Vacations</router-link>
+          </li>
+          <li>
             <router-link to="/calendar">Calendar</router-link>
           </li>
         </ul>

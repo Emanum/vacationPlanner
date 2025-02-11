@@ -1,20 +1,6 @@
 <script setup>
 const supabase = useSupabaseClient()
 
-import { ref } from '#imports'
-const date = ref(new Date())
-
-const attrs = ref([
-  {
-    key: 'today',
-    highlight: {
-      color: 'green',
-      fillMode: 'solid'
-    },
-    dates: new Date()
-  }
-])
-
 const loading = ref(true)
 const username = ref('')
 const website = ref('')
@@ -61,35 +47,13 @@ async function updateProfile() {
   }
 }
 
-async function signOut() {
-  try {
-    loading.value = true
-    const { error } = await supabase.auth.signOut()
-    if (error) throw error
-    user.value = null
-  } catch (error) {
-    alert(error.message)
-  } finally {
-    loading.value = false
-  }
-}
 </script>
 
 <template>
-  <div>
-    <client-only>
-      <h2>Calendar</h2>
-<!--      make sure you place Vue Cal in a container that has a set height! (not auto or initial)-->
-<!--      By default Vue Cal will take the full width & height of its container if it has a set height.-->
-      <div style="height: 300px; width:500px;">
-        <VCalendar v-model="date" style="height: 100%; width: 100%;" />
-      </div>
 
-
-      <h2>Date Picker</h2>
-      <VDatePicker v-model="date" :attributes="attrs" />
-    </client-only>
-  </div>
 </template>
 
 
+<style scoped>
+
+</style>

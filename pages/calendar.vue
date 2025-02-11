@@ -1,4 +1,3 @@
-!-- pages/Account.vue -->
 <template>
   <BaseLayout>
     <Calendar />
