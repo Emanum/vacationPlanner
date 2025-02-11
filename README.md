@@ -1,75 +1,16 @@
-# Nuxt Minimal Starter
+# Vacation Planner
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Simple Demo project to demonstrate Nuxt.js in combination with:
 
-## Setup
+- Vuetify: for hosting the Nuxt.js app and auto deployment directly from github
+- Supabase: for hosting the postgres database and as a row level security backend for the app. Also handles
+  authentication with 3rd party providers like Google, Github, etc.
 
-Make sure to install dependencies:
+Both uses the free their free tier for this demo.
 
-```bash
-# npm
-npm install
+Live Demo: [netlify](https://delicate-rabanadas-b5b04f.netlify.app/login)
 
-# pnpm
-pnpm install
+## Features
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Users can form teams and manage a calendar with vacations and public holidays. The app is designed to be used by small
+teams.
